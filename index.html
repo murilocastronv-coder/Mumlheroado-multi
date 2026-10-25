@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d12"><meta name="description" content="MU Online Solo Classic — portal oficial, status do servidor, jogadores e rankings.">
+<title>MU Online Classic — Portal</title>
+<style>
+:root{color-scheme:dark;--bg:#090c12;--panel:#111722;--line:#293345;--gold:#d9ad55;--text:#f3f4f6;--muted:#a7b0c0;--green:#48d597}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#303b4e 0,transparent 45%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{border-bottom:1px solid #ffffff18;background:#080b11d9;position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}.navin{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:900;letter-spacing:.07em}.brand span{color:var(--gold)}.links{display:flex;gap:20px;color:var(--muted);font-size:14px}.links a:hover{color:var(--gold)}
+.hero{padding:70px 0 42px;text-align:center}.eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:11px;font-weight:800}.hero h1{font-size:clamp(36px,7vw,68px);line-height:1.03;margin:15px 0 18px;letter-spacing:-.04em}.hero h1 em{color:var(--gold);font-style:normal}.hero p{max-width:640px;margin:0 auto;color:var(--muted);font-size:17px}.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:8px;font-weight:800;border:1px solid var(--line);background:#171e2b}.btn.primary{background:linear-gradient(135deg,#f0cc78,#b9802e);color:#1b1408;border:0}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.section{padding:22px 0 40px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:16px}.sectionhead h2{font-size:22px;margin:0}.sectionhead p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.stat,.panel{background:linear-gradient(145deg,#151d2a,#0e131c);border:1px solid var(--line);border-radius:13px;padding:20px}.stat .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.stat .num{font-size:clamp(26px,4vw,38px);font-weight:900;margin:8px 0 2px;font-variant-numeric:tabular-nums}.sub{font-size:12px;color:var(--muted)}.statusdot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:7px;box-shadow:0 0 12px #48d59766}.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.table{width:100%;border-collapse:collapse;font-size:14px}.table th,.table td{text-align:left;padding:11px 8px;border-bottom:1px solid #ffffff12}.table th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.empty{color:var(--muted);font-size:14px;padding:20px 0}.featurelist{display:grid;gap:12px;margin-top:16px}.feature{display:flex;gap:12px;align-items:start}.ico{display:grid;place-items:center;width:34px;height:34px;border:1px solid #8f713a;border-radius:9px;color:var(--gold);flex:none}.feature strong{display:block}.feature span{color:var(--muted);font-size:13px}.note{font-size:12px;color:var(--muted);margin-top:12px}.foot{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:12px;margin-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.links{gap:12px;font-size:12px}.hero{padding:50px 0 30px}.hero p{font-size:15px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:14px}.grid2{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}.table th,.table td{padding:9px 5px}}@media(max-width:390px){.links a:nth-child(2){display:none}.wrap{width:calc(100% - 22px)}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap navin"><a class="brand" href="/">MU <span>ONLINE</span> CLASSIC</a><nav class="links"><a href="#status">Servidor</a><a href="#ranking">Ranking</a><a href="game.html">Jogar</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="eyebrow">Temporada clássica · Web</div><h1>Entre em <em>MU Online</em></h1><p>Volte ao continente de MU. Acompanhe o estado do servidor, veja as estatísticas da comunidade e abra o jogo diretamente no navegador.</p><div class="actions"><a class="btn primary" href="game.html">⚔ Jogar agora</a><a class="btn" href="#status">Ver status do servidor</a></div></div></section>
+<section class="section" id="status"><div class="wrap"><div class="sectionhead"><div><h2>Status e comunidade</h2><p>Estatísticas consultadas no servidor; atualizadas automaticamente.</p></div><div id="updated" class="sub">Buscando dados…</div></div>
+<div class="stats">
+<article class="stat"><div class="label">Jogadores online</div><div class="num" id="online">—</div><div class="sub"><span class="statusdot"></span>Conexões ao lobby multiplayer</div></article>
+<article class="stat"><div class="label">Contas registradas</div><div class="num" id="accounts">—</div><div class="sub" id="dbstatus">Consultando banco de dados</div></article>
+<article class="stat"><div class="label">Personagens</div><div class="num" id="characters">—</div><div class="sub">Total salvo no banco conectado</div></article>
+<article class="stat"><div class="label">Contas criadas hoje</div><div class="num" id="today">—</div><div class="sub">Desde a meia-noite do servidor</div></article>
+</div><div id="dbnote" class="note">As estatísticas serão exibidas quando a conexão PostgreSQL estiver configurada no servidor.</div></div></section>
+<section class="section" id="ranking"><div class="wrap grid2">
+<article class="panel"><div class="sectionhead"><div><h2>🏆 Ranking de personagens</h2><p>Maiores níveis registrados no banco</p></div></div><div id="rankcontent" class="empty">Carregando ranking…</div></article>
+<aside class="panel"><h2 style="margin:0">Servidor MU</h2><div class="featurelist">
+<div class="feature"><div class="ico">◉</div><div><strong id="serverlabel">Verificando servidor</strong><span>Gateway de conexão e salas em tempo real</span></div></div>
+<div class="feature"><div class="ico">▤</div><div><strong>Banco de dados PostgreSQL</strong><span id="dbdetail">Aguardando conexão segura do servidor</span></div></div>
+<div class="feature"><div class="ico">✦</div><div><strong>Cliente no navegador</strong><span>Controles adaptados para celular e computador</span></div></div>
+</div><p class="note">Nota: jogadores online significa usuários conectados ao lobby multiplayer; ainda não representa jogadores sincronizados dentro do mapa do motor WASM original.</p></aside>
+</div></section>
+</main>
+<footer class="wrap foot"><span>© MU Online Classic · Portal comunitário</span><span><a href="game.html">Abrir cliente do jogo</a> · <a href="https://github.com/murilocastronv-coder/mu-online-solo-classic">Código-fonte</a></span></footer>
+<script>
+const API="https://mu-online-multiplayer-gateway.onrender.com/api/stats";
+const fmt=n=>Number.isFinite(Number(n))?new Intl.NumberFormat("pt-BR").format(Number(n)):"—";
+async function refreshStats(){
+ try{
+  const r=await fetch(API,{cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status);
+  const d=await r.json();
+  document.getElementById("online").textContent=fmt(d.onlinePlayers);
+  document.getElementById("accounts").textContent=d.totalAccounts==null?"—":fmt(d.totalAccounts);
+  document.getElementById("characters").textContent=d.totalCharacters==null?"—":fmt(d.totalCharacters);
+  document.getElementById("today").textContent=d.accountsCreatedToday==null?"—":fmt(d.accountsCreatedToday);
+  document.getElementById("serverlabel").textContent="Servidor "+(d.status==="ok"?"respondendo":"indisponível");
+  document.getElementById("dbstatus").textContent=d.databaseConnected?"Banco conectado":"Snapshot do banco Murioo";
+  document.getElementById("dbdetail").textContent=d.databaseConnected?"Contas e personagens consultados em tempo real":"Última leitura 24/10/2026; atualização ao vivo pendente";
+  document.getElementById("dbnote").textContent=d.databaseConnected?"Dados do PostgreSQL atualizados em tempo real.":"Contas/personagens mostram a última leitura do banco Murioo (24/10/2026); conecte DATABASE_URL na Render para atualização ao vivo.";
+  document.getElementById("rankcontent").innerHTML="";
+  if(d.topCharacters&&d.topCharacters.length){
+   const table=document.createElement("table");table.className="table";
+   table.innerHTML="<thead><tr><th>#</th><th>Personagem</th><th>Classe</th><th>Nível</th></tr></thead>";
+   const body=document.createElement("tbody");
+   d.topCharacters.forEach((c,i)=>{const tr=document.createElement("tr");[i+1,c.name||"—",c.class||"—",fmt(c.level)].forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td)});body.appendChild(tr)});
+   table.appendChild(body);document.getElementById("rankcontent").appendChild(table);
+  } else {document.getElementById("rankcontent").textContent=d.databaseConnected?"Ainda não há personagens para mostrar.":"Ranking aguardando conexão ao banco de dados."}
+  document.getElementById("updated").textContent="Atualizado "+new Date(d.updatedAt||Date.now()).toLocaleTimeString("pt-BR");
+ }catch(e){document.getElementById("serverlabel").textContent="Servidor não respondeu";document.getElementById("dbstatus").textContent="Sem conexão com API";document.getElementById("dbnote").textContent="A API de estatísticas está iniciando ou indisponível. Atualize a página em alguns segundos.";document.getElementById("rankcontent").textContent="Ranking indisponível.";document.getElementById("updated").textContent="Sem atualização";}
+}
+refreshStats();setInterval(refreshStats,15000);
+</script>
+</body></html>
